@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f1eb" />
+    <title>数字纪念空间</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <p class="voice-notice" id="voice-notice" role="status" aria-live="polite" hidden></p>
+    <main class="page-shell">
+      <section class="hero-card">
+        <a class="back-link" href="./people.html">← 换一个人</a>
+        <div class="ai-badge">AI 生成纪念形象</div>
+        <div class="portrait-wrap">
+          <div class="portrait-placeholder" id="portrait" aria-label="人物照片占位图">纪念</div>
+          <span class="online-dot" id="availability" aria-label="互动空间可用" hidden></span>
+        </div>
+        <p class="eyebrow">一段温柔的记忆</p>
+        <h1 id="profile-name">纪念空间</h1>
+        <p class="profile-intro" id="profile-intro">正在加载人物资料…</p>
+        <p class="disclaimer">这是基于生前资料生成的 AI 纪念形象，不代表本人真实意识或意志。</p>
+      </section>
+
+      <section class="chat-card" aria-label="互动对话">
+        <div class="chat-header">
+          <div>
+            <p class="eyebrow">互动空间</p>
+            <h2 id="chat-title">聊几句</h2>
+          </div>
+          <button class="reset-button" id="reset-button" type="button" disabled>重新开始</button>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <div class="suggestions" id="suggestions" hidden></div>
+        <form class="composer" id="composer">
+          <label class="sr-only" for="question">输入想问的话</label>
+          <input id="question" name="question" autocomplete="off" placeholder="输入一句想说的话…" maxlength="120" disabled />
+          <button class="mic-button" id="mic-button" type="button" aria-label="开始语音输入" aria-pressed="false" disabled>录音</button>
+          <button type="submit" id="send-button" aria-label="发送" disabled>发送</button>
+        </form>
+        <p class="recording-bar" id="recording-bar" hidden>
+          <span>正在录音，再点一次麦克风结束并识别。</span>
+          <button class="mic-cancel" id="mic-cancel" type="button">取消录音</button>
+        </p>
+        <p class="status" id="status">正在加载人物资料…</p>
+        <pre class="debug-bar" id="debug-bar" hidden></pre>
+        <div class="recovery-actions"><button class="retry-button" id="retry-profile" type="button" hidden>重新加载资料</button></div>
+      </section>
+    </main>
+    <script>
+      window.memorialStartupTimer = window.setTimeout(function () {
+        if (window.memorialAppStarted) return;
+        var message = "页面脚本未能加载，请刷新；若仍无反应，请在右上角菜单选择系统浏览器打开。";
+        document.getElementById("status").textContent = message;
+        var notice = document.getElementById("voice-notice");
+        notice.textContent = message;
+        notice.hidden = false;
+      }, 8000);
+    </script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

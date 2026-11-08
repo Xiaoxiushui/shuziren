@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+out/
+# 一键启动时在根目录生成的局域网二维码，含本机 IP，不入库
+手机扫码.png
+drafts/
+reviews/
+profile-versions/
+# 自签名证书含私钥，只在本机生成，不入库
+server/certs/
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log

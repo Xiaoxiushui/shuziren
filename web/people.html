@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f1eb" />
+    <title>数字纪念空间</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="people-hero">
+        <div class="ai-badge">AI 生成纪念形象</div>
+        <p class="eyebrow">数字纪念空间</p>
+        <h1>选择一位想见的人</h1>
+        <p class="people-intro">人物介绍来自已审核资料，问答内容由 AI 生成，请核对重要信息。</p>
+      </section>
+
+      <section class="people-list" id="people-list" aria-live="polite">
+        <p class="people-loading">正在加载…</p>
+      </section>
+
+      <div class="recovery-actions"><button class="retry-button" id="retry-people" type="button" hidden>重新加载人物</button></div>
+      <p class="disclaimer people-disclaimer">页面内容为 AI 生成，不代表本人真实意识或意志。</p>
+    </main>
+    <script type="module" src="./people.js"></script>
+  </body>
+</html>
